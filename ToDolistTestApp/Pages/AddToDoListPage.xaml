@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDolistTestApp.AddToDoListPage">
+    <ScrollView>
+        <StackLayout>
+            <Button Text="保存"
+                    FontSize="Large"
+                    VerticalOptions="Start"
+                    HorizontalOptions="End"
+                    Clicked="OnSaveButtonClicked"/>
+
+            <StackLayout VerticalOptions="FillAndExpand"
+                         HorizontalOptions="FillAndExpand">
+                <Entry x:Name="title"
+                       FontSize="Medium"
+                       Placeholder="Title"
+                       MaxLength="20"
+                       VerticalOptions="Start"
+                       HorizontalOptions="FillAndExpand"/>
+
+                <Entry x:Name="place"
+                       Placeholder="Place"
+                       FontSize="Medium"
+                       ClearButtonVisibility="WhileEditing"
+                       VerticalOptions="Center"
+                       HorizontalOptions="FillAndExpand"/>
+
+                <Entry x:Name="URL"
+                       Placeholder="URL"
+                       FontSize="Medium"
+                       ClearButtonVisibility="WhileEditing"
+                       VerticalOptions="Center"
+                       HorizontalOptions="FillAndExpand"/>
+
+                <Editor x:Name="note"
+                        Placeholder="Note"
+                        FontSize="Medium"
+                        AutoSize="TextChanges"
+                        VerticalOptions="Fill"
+                        HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
