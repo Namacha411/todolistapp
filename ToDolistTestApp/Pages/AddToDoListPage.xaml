@@ -4,17 +4,30 @@
              x:Class="ToDolistTestApp.AddToDoListPage">
     <ScrollView>
         <StackLayout>
-            <Button Text="保存"
-                    FontSize="Large"
-                    VerticalOptions="Start"
-                    HorizontalOptions="End"
-                    Clicked="OnSaveButtonClicked"/>
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="End">
+                <Button Text="保存"
+                        FontSize="Large"
+                        BackgroundColor="Transparent"
+                        VerticalOptions="Start"
+                        HorizontalOptions="End"
+                        Clicked="OnSaveButtonClicked"/>
 
-            <StackLayout VerticalOptions="FillAndExpand"
+                <Button Text="削除"
+                        FontSize="Large"
+                        BackgroundColor="Transparent"
+                        VerticalOptions="Start"
+                        HorizontalOptions="End"
+                        Clicked="OnDeleteButtonClicked"/>
+            </StackLayout>
+
+            <StackLayout Margin="20"
+                         VerticalOptions="FillAndExpand"
                          HorizontalOptions="FillAndExpand">
                 <Entry x:Name="title"
                        FontSize="Medium"
                        Placeholder="Title"
+                       Text="{Binding title}"
                        MaxLength="20"
                        VerticalOptions="Start"
                        HorizontalOptions="FillAndExpand"/>
@@ -22,12 +35,14 @@
                 <Entry x:Name="place"
                        Placeholder="Place"
                        FontSize="Medium"
+                       Text="{Binding place}"
                        ClearButtonVisibility="WhileEditing"
                        VerticalOptions="Center"
                        HorizontalOptions="FillAndExpand"/>
 
                 <Entry x:Name="URL"
                        Placeholder="URL"
+                       Text="{Binding url}"
                        FontSize="Medium"
                        ClearButtonVisibility="WhileEditing"
                        VerticalOptions="Center"
@@ -35,6 +50,7 @@
 
                 <Editor x:Name="note"
                         Placeholder="Note"
+                        Text="{Binding note}"
                         FontSize="Medium"
                         AutoSize="TextChanges"
                         VerticalOptions="Fill"

@@ -17,14 +17,12 @@ namespace ToDolistTestApp
         public MainPage()
         {
             Title = "メインページ";
-
             InitializeComponent();
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-
             listView.ItemsSource = await App.Database.GetNotesAsync();
         }
 

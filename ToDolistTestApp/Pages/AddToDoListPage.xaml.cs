@@ -18,8 +18,15 @@ namespace ToDolistTestApp
         async void OnSaveButtonClicked(object sender, EventArgs e)
         {
             Todo todo = (Todo)BindingContext;
-            todo.dateTime = DateTime.UtcNow;
+            todo.dateTime = DateTime.Now;
             await App.Database.SaveNoteAsync(todo);
+            await Navigation.PopAsync();
+        }
+
+        async void OnDeleteButtonClicked(object sender, EventArgs e)
+        {
+            Todo todo = (Todo)BindingContext;
+            await App.Database.DeleteNoteAsync(todo);
             await Navigation.PopAsync();
         }
     }

@@ -6,7 +6,6 @@
              mc:Ignorable="d"
              x:Class="ToDolistTestApp.MainPage">
     <StackLayout>
-        <!--Label Text="This is testcode"/-->
         <Button Text="+"
                 FontSize="Title"
                 VerticalOptions="StartAndExpand"
@@ -22,8 +21,8 @@
                       VerticalOptions="FillAndExpand">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Text}"
-                                  Detail="{Binding Date}" />
+                        <TextCell Text="{Binding title}"
+                                  Detail="{Binding dateTime}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
