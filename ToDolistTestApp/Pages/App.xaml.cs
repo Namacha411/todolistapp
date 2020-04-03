@@ -19,7 +19,7 @@ namespace ToDolistTestApp
                     database = new TodoDatabase(
                         Path.Combine(
                             Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                            "Notes.db3"));
+                            "TodoList.db3"));
                 }
                 return database;
             }

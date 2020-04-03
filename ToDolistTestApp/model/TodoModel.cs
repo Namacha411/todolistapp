@@ -1,6 +1,5 @@
 ﻿using System;
 using SQLite;
-using System.Collections.Generic;
 
 namespace ToDolistTestApp.Models
 {

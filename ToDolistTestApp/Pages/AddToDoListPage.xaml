@@ -5,7 +5,7 @@
     <ScrollView>
         <StackLayout>
             <StackLayout Orientation="Horizontal"
-                         HorizontalOptions="End"
+                         HorizontalOptions="FillAndExpand"
                          Padding="20">
                 <Button Text="削除"
                         Padding="5"
@@ -14,8 +14,10 @@
                         BackgroundColor="Transparent"
                         Visual="Material"
                         VerticalOptions="Start"
-                        HorizontalOptions="End"
+                        HorizontalOptions="Start"
                         Clicked="OnDeleteButtonClicked"/>
+
+                <StackLayout HorizontalOptions="FillAndExpand"/>
 
                 <Button Text="保存"
                         Padding="5"
@@ -35,6 +37,7 @@
                 <Entry x:Name="title"
                        FontSize="Medium"
                        Placeholder="タイトル"
+                       MaxLength="25"
                        Text="{Binding title}"
                        Visual="Material"
                        BackgroundColor="Transparent"
@@ -43,6 +46,7 @@
 
                 <Editor x:Name="note"
                         Placeholder="ノート"
+                        MaxLength="800"
                         Text="{Binding note}"
                         FontSize="Medium"
                         Visual="Material"

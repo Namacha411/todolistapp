@@ -22,9 +22,4 @@
     <Folder Include="Pages\" />
     <Folder Include="Resouce\" />
   </ItemGroup>
-  <ItemGroup>
-    <None Update="Resouce\icons\ic_add_black_18dp.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
 </Project>

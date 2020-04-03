@@ -15,19 +15,19 @@ namespace ToDolistTestApp.Data
             _database.CreateTableAsync<Todo>().Wait();
         }
 
-        public Task<List<Todo>> GetNotesAsync()
+        public Task<List<Todo>> GetTodosAsync()
         {
             return _database.Table<Todo>().ToListAsync();
         }
 
-        public Task<Todo> GetNoteAsync(int id)
+        public Task<Todo> GetTodoAsync(int id)
         {
             return _database.Table<Todo>()
                             .Where(i => i.ID == id)
                             .FirstOrDefaultAsync();
         }
 
-        public Task<int> SaveNoteAsync(Todo todo)
+        public Task<int> SaveTodoAsync(Todo todo)
         {
             if (todo.ID != 0)
             {
@@ -39,9 +39,14 @@ namespace ToDolistTestApp.Data
             }
         }
 
-        public Task<int> DeleteNoteAsync(Todo todo)
+        public Task<int> DeleteTodoAsync(Todo todo)
         {
             return _database.DeleteAsync(todo);
+        }
+
+        public async Task<int> getNumOfElement()
+        {
+            return await _database.Table<Todo>().CountAsync();
         }
     }
 }

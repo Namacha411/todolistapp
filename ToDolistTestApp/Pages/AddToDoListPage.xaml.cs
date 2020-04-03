@@ -11,23 +11,22 @@ namespace ToDolistTestApp
         public AddToDoListPage()
         {
             Title = "予定を追加";
-
             InitializeComponent();
         }
 
         async void OnSaveButtonClicked(object sender, EventArgs e)
         {
-            Todo todo = (Todo)BindingContext;
+            Todo todo = BindingContext as Todo;
             todo.dateTime = DateTime.Now;
             todo.isChecked = false;
-            await App.Database.SaveNoteAsync(todo);
+            await App.Database.SaveTodoAsync(todo);
             await Navigation.PopAsync();
         }
 
         async void OnDeleteButtonClicked(object sender, EventArgs e)
         {
-            Todo todo = (Todo)BindingContext;
-            await App.Database.DeleteNoteAsync(todo);
+            Todo todo = BindingContext as Todo;
+            await App.Database.DeleteTodoAsync(todo);
             await Navigation.PopAsync();
         }
     }

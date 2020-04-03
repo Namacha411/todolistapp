@@ -23,10 +23,12 @@ namespace ToDolistTestApp
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            listView.ItemsSource = await App.Database.GetNotesAsync();
+            listView.ItemsSource = await App.Database.GetTodosAsync();
+            int res = await App.Database.getNumOfElement();
+            numOfElemnt.Text = res.ToString();
         }
 
-        async void OnAddToDoListButtonClicked(Object sender, EventArgs e)
+        async void OnAddToDoListButtonClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(
                 new AddToDoListPage

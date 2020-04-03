@@ -3,51 +3,61 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
              x:Class="ToDolistTestApp.MainPage">
+    <NavigationPage.TitleView>
+        <Grid Padding="10">
+            <Label Text="メインページ"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"/>
+            <Label x:Name="numOfElemnt"
+                   Text="要素数"
+                   FontSize="Large"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"/>
+        </Grid>
+    </NavigationPage.TitleView>
     <StackLayout>
-
-        <StackLayout>
-            <ScrollView>
-                <ListView x:Name="listView"
-                          ItemSelected="OnListViewItemSelected"
-                          Margin="20"
-                          Visual="Material"
-                          HorizontalOptions="FillAndExpand"
-                          VerticalOptions="FillAndExpand"
-                          HasUnevenRows="True">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout HorizontalOptions="FillAndExpand"
-                                             VerticalOptions="FillAndExpand"
-                                             Orientation="Horizontal"
-                                             Padding="10">
-                                    <CheckBox IsChecked="{Binding isChecked}"/>
-                                    <StackLayout Orientation="Vertical">
-                                        <Label Text="{Binding title}"
-                                                FontSize="Large"
-                                                FontAttributes="Bold"
-                                                TextColor="Black"/>
-                                        <Label Text="{Binding note}"
-                                                FontSize="Body"
-                                                TextColor="Black"/>
-                                        <StackLayout Orientation="Horizontal">
-                                            <Label Text="登録日:"
-                                                   FontSize="Small"
-                                                   TextColor="Gray"/>
-                                            <Label Text="{Binding dateTime}"
-                                                    FontSize="Small"
-                                                    TextColor="Gray"/>
-                                        </StackLayout>
+        <ScrollView>
+            <ListView x:Name="listView"
+                        ItemSelected="OnListViewItemSelected"
+                        Margin="20"
+                        Visual="Material"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="FillAndExpand"
+                                            Orientation="Horizontal"
+                                            Padding="10">
+                                <CheckBox IsChecked="{Binding isChecked}"/>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding title}"
+                                            FontSize="Large"
+                                            FontAttributes="Bold"
+                                            TextColor="Black"/>
+                                    <Label Text="{Binding note}"
+                                            FontSize="Body"
+                                            TextColor="Black"/>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="登録日:"
+                                                FontSize="Small"
+                                                TextColor="Gray"/>
+                                        <Label Text="{Binding dateTime}"
+                                                FontSize="Small"
+                                                TextColor="Gray"/>
                                     </StackLayout>
                                 </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </ScrollView>
-        </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
 
         <StackLayout Padding="20">
             <Button Text="+"
