@@ -19,6 +19,7 @@ namespace ToDolistTestApp
         {
             Todo todo = (Todo)BindingContext;
             todo.dateTime = DateTime.Now;
+            todo.isChecked = false;
             await App.Database.SaveNoteAsync(todo);
             await Navigation.PopAsync();
         }

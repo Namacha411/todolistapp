@@ -6,26 +6,61 @@
              mc:Ignorable="d"
              x:Class="ToDolistTestApp.MainPage">
     <StackLayout>
-        <Button Text="+"
-                FontSize="Title"
-                VerticalOptions="StartAndExpand"
-                HorizontalOptions="EndAndExpand"
-                Clicked="OnAddToDoListButtonClicked">
-        </Button>
 
-        <ScrollView>
-            <ListView x:Name="listView"
-                      ItemSelected="OnListViewItemSelected"
-                      Margin="20"
-                      HorizontalOptions="FillAndExpand"
-                      VerticalOptions="FillAndExpand">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Text="{Binding title}"
-                                  Detail="{Binding dateTime}" />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </ScrollView>
+        <StackLayout>
+            <ScrollView>
+                <ListView x:Name="listView"
+                          ItemSelected="OnListViewItemSelected"
+                          Margin="20"
+                          Visual="Material"
+                          HorizontalOptions="FillAndExpand"
+                          VerticalOptions="FillAndExpand"
+                          HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout HorizontalOptions="FillAndExpand"
+                                             VerticalOptions="FillAndExpand"
+                                             Orientation="Horizontal"
+                                             Padding="10">
+                                    <CheckBox IsChecked="{Binding isChecked}"/>
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding title}"
+                                                FontSize="Large"
+                                                FontAttributes="Bold"
+                                                TextColor="Black"/>
+                                        <Label Text="{Binding note}"
+                                                FontSize="Body"
+                                                TextColor="Black"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="登録日:"
+                                                   FontSize="Small"
+                                                   TextColor="Gray"/>
+                                            <Label Text="{Binding dateTime}"
+                                                    FontSize="Small"
+                                                    TextColor="Gray"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+
+        <StackLayout Padding="20">
+            <Button Text="+"
+                    TextColor="White"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    BackgroundColor="DodgerBlue"
+                    Visual="Material"
+                    CornerRadius="10"
+                    Padding="10"
+                    HorizontalOptions="Center"
+                    Clicked="OnAddToDoListButtonClicked">
+            </Button>
+        </StackLayout>
     </StackLayout>
 </ContentPage>

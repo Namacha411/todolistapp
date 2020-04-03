@@ -5,20 +5,28 @@
     <ScrollView>
         <StackLayout>
             <StackLayout Orientation="Horizontal"
-                         HorizontalOptions="End">
-                <Button Text="保存"
-                        FontSize="Large"
-                        BackgroundColor="Transparent"
-                        VerticalOptions="Start"
-                        HorizontalOptions="End"
-                        Clicked="OnSaveButtonClicked"/>
-
+                         HorizontalOptions="End"
+                         Padding="20">
                 <Button Text="削除"
-                        FontSize="Large"
+                        Padding="5"
+                        TextColor="MediumVioletRed"
+                        FontSize="Medium"
                         BackgroundColor="Transparent"
+                        Visual="Material"
                         VerticalOptions="Start"
                         HorizontalOptions="End"
                         Clicked="OnDeleteButtonClicked"/>
+
+                <Button Text="保存"
+                        Padding="5"
+                        FontAttributes="Bold"
+                        TextColor="White"
+                        FontSize="Medium"
+                        BackgroundColor="DodgerBlue"
+                        Visual="Material"
+                        VerticalOptions="Start"
+                        HorizontalOptions="End"
+                        Clicked="OnSaveButtonClicked"/>
             </StackLayout>
 
             <StackLayout Margin="20"
@@ -26,34 +34,21 @@
                          HorizontalOptions="FillAndExpand">
                 <Entry x:Name="title"
                        FontSize="Medium"
-                       Placeholder="Title"
+                       Placeholder="タイトル"
                        Text="{Binding title}"
-                       MaxLength="20"
+                       Visual="Material"
+                       BackgroundColor="Transparent"
                        VerticalOptions="Start"
                        HorizontalOptions="FillAndExpand"/>
 
-                <Entry x:Name="place"
-                       Placeholder="Place"
-                       FontSize="Medium"
-                       Text="{Binding place}"
-                       ClearButtonVisibility="WhileEditing"
-                       VerticalOptions="Center"
-                       HorizontalOptions="FillAndExpand"/>
-
-                <Entry x:Name="URL"
-                       Placeholder="URL"
-                       Text="{Binding url}"
-                       FontSize="Medium"
-                       ClearButtonVisibility="WhileEditing"
-                       VerticalOptions="Center"
-                       HorizontalOptions="FillAndExpand"/>
-
                 <Editor x:Name="note"
-                        Placeholder="Note"
+                        Placeholder="ノート"
                         Text="{Binding note}"
                         FontSize="Medium"
-                        AutoSize="TextChanges"
-                        VerticalOptions="Fill"
+                        Visual="Material"
+                        BackgroundColor="Transparent"
+                        HeightRequest="30"
+                        VerticalOptions="FillAndExpand"
                         HorizontalOptions="FillAndExpand"/>
             </StackLayout>
         </StackLayout>

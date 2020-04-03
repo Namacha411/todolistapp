@@ -14,10 +14,17 @@
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.530" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.2" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="4.5.0.530" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="model\" />
     <Folder Include="Pages\" />
+    <Folder Include="Resouce\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Resouce\icons\ic_add_black_18dp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
